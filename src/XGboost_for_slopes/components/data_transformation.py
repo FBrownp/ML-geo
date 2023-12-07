@@ -34,6 +34,7 @@ class DataTransformation():
 
     def get_train_test_data(self):
         data = pd.read_csv(self.config.data_path)
+        data = data[data["FSs"] < 3] # Engineers recommendation
         train, test = train_test_split(data,test_size=0.3)
         train.to_csv(os.path.join(self.config.root_dir, "train.csv"), index= False)
         test.to_csv(os.path.join(self.config.root_dir, "test.csv"), index= False)
