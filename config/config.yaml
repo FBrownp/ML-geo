@@ -11,3 +11,8 @@ data_validation:
   unzip_data_dir: artifacts/data_ingestion/main_data.csv
   STATUS_FILE: artifacts/data_validation/status.txt
   STATUS_FILE_DTYPE: artifacts/data_validation/status_dtype.txt
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/main_data.csv
+  transformation_path: artifacts/data_transformation/transformation.pkl

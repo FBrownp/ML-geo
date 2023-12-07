@@ -1,6 +1,8 @@
 from XGboost_for_slopes.constants import*
 from XGboost_for_slopes.utils.common import create_directories,read_yaml
-from XGboost_for_slopes.entity.config_entity import DataIngestionConfig, DataValidationConfig
+from XGboost_for_slopes.entity.config_entity import (DataIngestionConfig,
+                                                     DataValidationConfig,
+                                                     DataTransformationConfig)
 
 
 class ConfigurationManager:
@@ -42,3 +44,15 @@ class ConfigurationManager:
             all_schema = schema,
             )
         return data_validation_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            transformation_path= config.transformation_path
+            )
+        return data_transformation_config

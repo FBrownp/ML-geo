@@ -1,1 +1,7 @@
-asd: asd
+
+N_STIMATORS: 800
+REG_ALPHA: 0.01
+REG_LAMBDA: 0.03
+EVAL_METRIC: "rmse"
+ETA: 0.3
+SEED: 0

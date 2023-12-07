@@ -21,10 +21,12 @@ class DataValidation():
                 validation_status = False
                 with open(self.config.STATUS_FILE, "w") as f:
                     f.write(f"Validation status: {validation_status}")
+                    logger.info(f"Validation status of columns names: {validation_status}")
             else:
                 validation_status =  True
                 with open(self.config.STATUS_FILE, "w") as f:
                     f.write(f"Validation status: {validation_status}")
+                    logger.info(f"Validation status of columns names: {validation_status}")
 
         except Exception as e:
             raise e
@@ -43,10 +45,14 @@ class DataValidation():
                 validation_status = False
                 with open(self.config.STATUS_FILE_DTYPE, "w") as f:
                     f.write(f"Validation status: {validation_status}")
+                    logger.info(f"Validation status of columns dtypes: {validation_status}")
+
             else:
                 validation_status =  True
                 with open(self.config.STATUS_FILE_DTYPE, "w") as f:
                     f.write(f"Validation status: {validation_status}")
+                    logger.info(f"Validation status of columns dtypes: {validation_status}")
+
 
         except Exception as e:
             raise e
