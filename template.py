@@ -21,6 +21,7 @@ list_of_files = [
     "dvc.yaml",
     "params.yaml",
     "requirements.txt",
+    "schema.yaml",
     "setup.py",
     "main.py",
     "app.py",

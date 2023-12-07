@@ -1,0 +1,13 @@
+COLUMNS:
+  Cohesion: float64
+  Phi: float64
+  Unit_weight: float64
+  Pe: float64
+  Ps: float64
+  FSs: float64
+  FSgmp: float64
+  slope_angle: float64
+  slope_height: float64
+
+TARGET_COLUMN:
+  name: FSs, FSgmp
