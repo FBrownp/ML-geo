@@ -3,7 +3,8 @@ from XGboost_for_slopes.utils.common import create_directories,read_yaml
 from XGboost_for_slopes.entity.config_entity import (DataIngestionConfig,
                                                      DataValidationConfig,
                                                      DataTransformationConfig,
-                                                     ModelTrainerConfig)
+                                                     ModelTrainerConfig,
+                                                     ModelEvaluationConfig)
 
 
 class ConfigurationManager:
@@ -79,3 +80,25 @@ class ConfigurationManager:
             target_column_2= schema.target_2
             )
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.Xgboost
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir = config.root_dir,
+            test_data_path  = config.test_data_path,
+            model_path = config.model_path,
+            model_name_1 = config.model_name_1,
+            model_name_2 = config.model_name_2,
+            target_column_1= schema.target_1,
+            target_column_2= schema.target_2,
+            mlflow_uri= "https://dagshub.com/FBrownp/ML-geo.mlflow",
+            all_params= params,
+            transformation_path= config.transformation_path
+            )
+        return model_evaluation_config
+    

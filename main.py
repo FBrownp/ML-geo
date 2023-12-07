@@ -3,6 +3,7 @@ from XGboost_for_slopes.pipeline.stage01_data_ingestion import DataIngestionTrai
 from XGboost_for_slopes.pipeline.stage02_data_validation import DataValidationTrainingPipeline
 from XGboost_for_slopes.pipeline.stage03_data_transformation import DataTransformationTrainingPipeline
 from XGboost_for_slopes.pipeline.stage04_model_trainer import ModelTrainerPipeline
+from XGboost_for_slopes.pipeline.stage05_model_evaluation import ModelEvaluationPipeline
 
 
 STAGE_NAME = "Data Ingestion Stage"
@@ -48,6 +49,18 @@ STAGE_NAME = "Model Trainer Stage"
 try:
     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
     obj = ModelTrainerPipeline()
+    obj.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx=======x")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+
+STAGE_NAME = "Model Evaluation Stage"
+
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    obj = ModelEvaluationPipeline()
     obj.main()
     logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx=======x")
 except Exception as e:

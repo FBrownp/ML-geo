@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Repositories/ML-geo/mlruns/0/a53d4c9298b14dddab4353bf0927bcd8/artifacts
+end_time: 1701979067866
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a53d4c9298b14dddab4353bf0927bcd8
+run_name: debonair-carp-200
+run_uuid: a53d4c9298b14dddab4353bf0927bcd8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701979062718
+status: 3
+tags: []
+user_id: fbrow

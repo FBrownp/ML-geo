@@ -8,6 +8,8 @@ from sklearn.preprocessing import StandardScaler,PolynomialFeatures
 from sklearn.impute import SimpleImputer
 from sklearn.metrics import r2_score
 from XGboost_for_slopes.entity.config_entity import ModelTrainerConfig
+from XGboost_for_slopes.utils.common import save_json
+from pathlib import Path
 
 class ModelTrainer():
     def __init__(self, config: ModelTrainerConfig):
@@ -39,9 +41,9 @@ class ModelTrainer():
     
         xgb_Reg = xgb.XGBRegressor(**params_xgb, booster= "gblinear")
         xgb_Reg.fit(X_data_train_1,y_data_train_1)
-        r2_value = r2_score(y_data_test_1, xgb_Reg.predict(X_data_test_1))
+        r2_value_model_1 = r2_score(y_data_test_1, xgb_Reg.predict(X_data_test_1))
 
-        logger.info(f"Model_1 is fitted, r2 score for testing data is: {r2_value}")
+        logger.info(f"Model_1 is fitted, r2 score for testing data is: {r2_value_model_1}")
 
         joblib.dump(xgb_Reg, os.path.join(self.config.root_dir,self.config.model_name_1))
 
@@ -59,10 +61,14 @@ class ModelTrainer():
     
         xgb_Reg = xgb.XGBRegressor(**params_xgb, booster= "gblinear")
         xgb_Reg.fit(X_data_train_2,y_data_train_2)
-        r2_value = r2_score(y_data_test_2, xgb_Reg.predict(X_data_test_2))
+        r2_value_model_2 = r2_score(y_data_test_2, xgb_Reg.predict(X_data_test_2))
 
-        logger.info(f"Model_2 is fitted, r2 score for testing data is: {r2_value}")
+        logger.info(f"Model_2 is fitted, r2 score for testing data is: {r2_value_model_2}")
 
         joblib.dump(xgb_Reg, os.path.join(self.config.root_dir,self.config.model_name_2))
 
         logger.info(f"Model_2 is saved in {os.path.join(self.config.root_dir,self.config.model_name_2)}")
+
+        scores = {"r2_score_model_1" : r2_value_model_1, "r2_score_model_2": r2_value_model_2}
+        save_json(path= Path("scores.json"), data = scores)
+        

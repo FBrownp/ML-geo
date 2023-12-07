@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Repositories/ML-geo/mlruns/0/bdc076c92b0646cba541623727fab364/artifacts
+end_time: 1701979783514
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bdc076c92b0646cba541623727fab364
+run_name: lyrical-boar-979
+run_uuid: bdc076c92b0646cba541623727fab364
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701979778617
+status: 3
+tags: []
+user_id: fbrow

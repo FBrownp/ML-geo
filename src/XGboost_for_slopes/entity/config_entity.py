@@ -34,3 +34,17 @@ class ModelTrainerConfig:
     reg_lambda: float
     target_column_1: float
     target_column_2: float
+
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    model_name_1: str
+    model_name_2: str
+    target_column_1: str 
+    target_column_2: str 
+    mlflow_uri: str
+    all_params: dict
+    transformation_path: Path

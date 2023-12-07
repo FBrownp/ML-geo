@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Repositories/ML-geo/mlruns/0/c76789c80602459db5660b6f455e4b78/artifacts
+end_time: 1701979686568
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c76789c80602459db5660b6f455e4b78
+run_name: peaceful-newt-278
+run_uuid: c76789c80602459db5660b6f455e4b78
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701979681468
+status: 3
+tags: []
+user_id: fbrow

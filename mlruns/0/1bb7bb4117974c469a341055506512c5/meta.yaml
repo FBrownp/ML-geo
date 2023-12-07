@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Repositories/ML-geo/mlruns/0/1bb7bb4117974c469a341055506512c5/artifacts
+end_time: 1701979532753
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1bb7bb4117974c469a341055506512c5
+run_name: clumsy-owl-155
+run_uuid: 1bb7bb4117974c469a341055506512c5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701979527438
+status: 3
+tags: []
+user_id: fbrow

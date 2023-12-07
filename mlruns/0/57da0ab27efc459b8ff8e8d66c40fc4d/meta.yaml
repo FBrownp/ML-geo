@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Repositories/ML-geo/mlruns/0/57da0ab27efc459b8ff8e8d66c40fc4d/artifacts
+end_time: 1701980434821
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 57da0ab27efc459b8ff8e8d66c40fc4d
+run_name: indecisive-crow-631
+run_uuid: 57da0ab27efc459b8ff8e8d66c40fc4d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701980429722
+status: 3
+tags: []
+user_id: fbrow

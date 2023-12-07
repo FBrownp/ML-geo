@@ -14,4 +14,8 @@ scipy
 Flask
 Flask-Cors
 dill
+shap
+mlflow==2.2.2
+notebook
+matplotlib
 -e .

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Repositories/ML-geo/mlruns/0/6b5284f524764ce5a30513a311fc0d0d/artifacts
+end_time: 1701980209840
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6b5284f524764ce5a30513a311fc0d0d
+run_name: smiling-duck-773
+run_uuid: 6b5284f524764ce5a30513a311fc0d0d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701980204889
+status: 3
+tags: []
+user_id: fbrow
