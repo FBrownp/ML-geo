@@ -10,4 +10,5 @@ COLUMNS:
   slope_height: float64
 
 TARGET_COLUMN:
-  name: FSs, FSgmp
+  target_1: FSs
+  target_2: FSgmp

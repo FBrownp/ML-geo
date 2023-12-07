@@ -2,7 +2,8 @@ from XGboost_for_slopes.constants import*
 from XGboost_for_slopes.utils.common import create_directories,read_yaml
 from XGboost_for_slopes.entity.config_entity import (DataIngestionConfig,
                                                      DataValidationConfig,
-                                                     DataTransformationConfig)
+                                                     DataTransformationConfig,
+                                                     ModelTrainerConfig)
 
 
 class ConfigurationManager:
@@ -56,3 +57,25 @@ class ConfigurationManager:
             transformation_path= config.transformation_path
             )
         return data_transformation_config
+    
+
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.Xgboost
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir = config.root_dir,
+            train_data_path = config.train_data_path,
+            test_data_path  = config.test_data_path,
+            transformation_path = config.transformation_path,
+            model_name_1 = config.model_name_1,
+            model_name_2 = config.model_name_2,
+            reg_alpha = params.REG_ALPHA,
+            reg_lambda= params.REG_LAMBDA,
+            target_column_1= schema.target_1,
+            target_column_2= schema.target_2
+            )
+        return model_trainer_config
