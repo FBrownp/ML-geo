@@ -2,6 +2,9 @@ from XGboost_for_slopes.config.configuration import ConfigurationManager
 from XGboost_for_slopes.components.data_transformation import DataTransformation
 from XGboost_for_slopes import logger
 from pathlib import Path
+import sys
+from XGboost_for_slopes.exception.exception import CustomException
+
 
 STAGE_NAME = "Data Transformation Stage"
 
@@ -23,7 +26,7 @@ class DataTransformationTrainingPipeline:
                 else:
                     raise Exception(f"Your schema is not valid, check columns is {status}, check dtype is {status_dtype}")
         except Exception as e:
-            raise e
+            raise CustomException(e,sys)
 
 
 
@@ -37,4 +40,4 @@ if __name__ == "__main__":
         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx=======x")
     except Exception as e:
         logger.exception(e)
-        raise e
+        raise CustomException(e,sys)

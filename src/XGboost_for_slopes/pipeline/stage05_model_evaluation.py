@@ -1,7 +1,8 @@
 from XGboost_for_slopes.config.configuration import ConfigurationManager
 from XGboost_for_slopes.components.model_evaluation import ModelEvaluation
 from XGboost_for_slopes import logger
-
+import sys
+from XGboost_for_slopes.exception.exception import CustomException
 
 STAGE_NAME = "Model Evaluation Stage"
 
@@ -25,5 +26,5 @@ if __name__ == "__main__":
         logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx=======x")
     except Exception as e:
         logger.exception(e)
-        raise e
+        raise CustomException(e,sys)
 

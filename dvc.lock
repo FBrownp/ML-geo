@@ -7,10 +7,14 @@ stages:
       hash: md5
       md5: 616b9aeabe4a975a7155296e7cb5ce4f
       size: 1270
+    - path: src\XGboost_for_slopes\exception\exception.py
+      hash: md5
+      md5: 87d8b339b31e65186f384829f24f3766
+      size: 644
     - path: src\XGboost_for_slopes\pipeline\stage01_data_ingestion.py
       hash: md5
-      md5: d81820cc8fba954c83468f93680a84bf
-      size: 881
+      md5: 02b3b6713c73dafd06faadbe47e196f4
+      size: 978
     outs:
     - path: artifacts\data_ingestion\main_data.csv
       hash: md5
@@ -27,10 +31,14 @@ stages:
       hash: md5
       md5: 6f4d4c12a34466a6d376f884487daa4d
       size: 236
+    - path: src\XGboost_for_slopes\exception\exception.py
+      hash: md5
+      md5: 87d8b339b31e65186f384829f24f3766
+      size: 644
     - path: src\XGboost_for_slopes\pipeline\stage02_data_validation.py
       hash: md5
-      md5: a25805fe8149a853dfd73592ea955095
-      size: 950
+      md5: 93693bbc7346f62bd48f18530a00e9d5
+      size: 1049
     outs:
     - path: artifacts\data_validation\status.txt
       hash: md5
@@ -55,19 +63,23 @@ stages:
       hash: md5
       md5: 616b9aeabe4a975a7155296e7cb5ce4f
       size: 1270
+    - path: src\XGboost_for_slopes\exception\exception.py
+      hash: md5
+      md5: 87d8b339b31e65186f384829f24f3766
+      size: 644
     - path: src\XGboost_for_slopes\pipeline\stage03_data_transformation.py
       hash: md5
-      md5: 3aa23337e258b5ca1b8d9a5650ea367e
-      size: 1654
+      md5: dc5eede8ca7626d645648cc5b94eb18b
+      size: 1778
     outs:
     - path: artifacts\data_transformation\test.csv
       hash: md5
-      md5: 2cae7e20906111aba26c945ed7af1ecc
-      size: 997526
+      md5: 514eb608ca676f568bd9eb19b8800ddb
+      size: 997915
     - path: artifacts\data_transformation\train.csv
       hash: md5
-      md5: 8e22af631cf959a2873ee64b0154bde9
-      size: 2328011
+      md5: e44d193c83bd2b14437d82359dcf4843
+      size: 2327622
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
       md5: 84f7879c77e5e7b13d41b745207b173d
@@ -77,8 +89,8 @@ stages:
     deps:
     - path: artifacts\data_transformation\train.csv
       hash: md5
-      md5: 8e22af631cf959a2873ee64b0154bde9
-      size: 2328011
+      md5: e44d193c83bd2b14437d82359dcf4843
+      size: 2327622
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
       md5: 84f7879c77e5e7b13d41b745207b173d
@@ -91,26 +103,30 @@ stages:
       hash: md5
       md5: 413b64b4429462980c5c433c9eed6de9
       size: 52
+    - path: src\XGboost_for_slopes\exception\exception.py
+      hash: md5
+      md5: 87d8b339b31e65186f384829f24f3766
+      size: 644
     - path: src\XGboost_for_slopes\pipeline\stage04_model_trainer.py
       hash: md5
-      md5: 5bdf497d67bbb6a228ad34a9486be1e2
-      size: 865
+      md5: f77ead359e836cbe5e1a1e6016dc55d1
+      size: 964
     outs:
     - path: artifacts\model_trainer\model_1.joblib
       hash: md5
-      md5: cba67925fdb28c6a050ec3b8c4b16766
+      md5: 4a778c4e0121a98932bc3f051cb0ea33
       size: 2993
     - path: artifacts\model_trainer\model_2.joblib
       hash: md5
-      md5: 28cdc714ed75e76d847204975839f364
-      size: 2993
+      md5: faaf946aa7c8a5d915ed8920e1e5ea44
+      size: 2991
   model_evaluation:
     cmd: python src\XGboost_for_slopes\pipeline\stage05_model_evaluation.py
     deps:
     - path: artifacts\data_transformation\test.csv
       hash: md5
-      md5: 2cae7e20906111aba26c945ed7af1ecc
-      size: 997526
+      md5: 514eb608ca676f568bd9eb19b8800ddb
+      size: 997915
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
       md5: 84f7879c77e5e7b13d41b745207b173d
@@ -121,10 +137,10 @@ stages:
       size: 1270
     - path: src\XGboost_for_slopes\pipeline\stage05_model_evaluation.py
       hash: md5
-      md5: 0d07398456bde5a38e55fe31b8e2981b
-      size: 903
+      md5: d2d42cddf8125886c131329011f23ac6
+      size: 1002
     outs:
     - path: artifacts\model_evaluation\scores.json
       hash: md5
-      md5: 89e1afe6f8a70d46197afd0941349ffb
-      size: 218
+      md5: 52de8a867ca25e31e6e76431045537cd
+      size: 217

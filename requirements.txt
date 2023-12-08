@@ -18,4 +18,8 @@ shap
 mlflow==2.2.2
 notebook
 matplotlib
+pydantic
+fastapi
+uvicorn
+mystic
 -e .

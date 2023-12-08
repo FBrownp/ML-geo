@@ -2,7 +2,8 @@ import os
 from XGboost_for_slopes import logger
 from XGboost_for_slopes.entity.config_entity import DataValidationConfig
 import pandas as pd
-
+import sys
+from XGboost_for_slopes.exception.exception import CustomException
 
 
 class DataValidation():
@@ -29,7 +30,7 @@ class DataValidation():
                     logger.info(f"Validation status of columns names: {validation_status}")
 
         except Exception as e:
-            raise e
+            raise CustomException(e,sys)
         
 
     def validate_all_columns_dtypes(self) -> bool:
@@ -55,4 +56,4 @@ class DataValidation():
 
 
         except Exception as e:
-            raise e
+            raise CustomException(e,sys)
