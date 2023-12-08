@@ -28,8 +28,8 @@ list_of_files = [
     "app.py",
     "Dockerfile",
     "research/trials.ipynb",
-    "templates/index.html"
-
+    "templates/index.html",
+    ".gitattributes"
 
 ]
 
