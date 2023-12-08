@@ -7,6 +7,7 @@ stages:
       - config\config.yaml
     outs: 
       - artifacts\data_ingestion\main_data.csv
+
   
   data_validation:
     cmd: python src\XGboost_for_slopes\pipeline\stage02_data_validation.py
@@ -14,7 +15,9 @@ stages:
     - src\XGboost_for_slopes\pipeline\stage02_data_validation.py
     - config\config.yaml
     - schema.yaml
-
+    outs:
+    - artifacts\data_validation\status_dtype.txt
+    - artifacts\data_validation\status.txt
   
   data_transformation:
     cmd: python src\XGboost_for_slopes\pipeline\stage03_data_transformation.py
@@ -23,7 +26,10 @@ stages:
     - config\config.yaml
     - artifacts/data_validation/status.txt
     - artifacts/data_validation/status_dtype.txt
-
+    outs:
+    - artifacts\data_transformation\test.csv
+    - artifacts\data_transformation\train.csv
+    - artifacts\data_transformation\transformation.pkl
 
   model_trainer:
     cmd: python src\XGboost_for_slopes\pipeline\stage04_model_trainer.py
@@ -33,6 +39,9 @@ stages:
     - params.yaml
     - artifacts\data_transformation\train.csv
     - artifacts\data_transformation\transformation.pkl
+    outs:
+    - artifacts\model_trainer\model_1.joblib
+    - artifacts\model_trainer\model_2.joblib
 
   
   model_evaluation:
@@ -42,3 +51,5 @@ stages:
     - config\config.yaml
     - artifacts\data_transformation\test.csv
     - artifacts\data_transformation\transformation.pkl
+    outs:
+    - artifacts\model_evaluation\scores.json
