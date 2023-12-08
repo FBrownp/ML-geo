@@ -40,11 +40,6 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Now,
-```bash
-open up you local host and port
-```
-
 
 ### DVC cmd
 
@@ -57,26 +52,8 @@ open up you local host and port
 ## MLflow
 
 [Documentation](https://mlflow.org/docs/latest/index.html)
-
-
-##### cmd
-- mlflow ui
+[dagshub](https://dagshub.com/FBrownp/ML-geo.mlflow)
 
 ### dagshub
 [dagshub](https://dagshub.com/)
 
-MLFLOW_TRACKING_URI=https://dagshub.com/FBrownp/ML-geo.mlflow \
-MLFLOW_TRACKING_USERNAME=FBrownp \
-MLFLOW_TRACKING_PASSWORD=cceabdf6d4f5adc126b6cb03cc7cc4bf568e2591 \
-python script.py
-Run this to export as env variables:
-
-```bash
-
-export MLFLOW_TRACKING_URI=https://dagshub.com/FBrownp/ML-geo.mlflow
-
-export MLFLOW_TRACKING_USERNAME=FBrownp
-
-export MLFLOW_TRACKING_PASSWORD=cceabdf6d4f5adc126b6cb03cc7cc4bf568e2591
-
-```
