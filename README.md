@@ -52,7 +52,7 @@ python app.py
 ## MLflow
 
 [Documentation](https://mlflow.org/docs/latest/index.html)
-[dagshub](https://dagshub.com/FBrownp/ML-geo.mlflow)
+[MLflow](https://dagshub.com/FBrownp/ML-geo.mlflow)
 
 ### dagshub
 [dagshub](https://dagshub.com/)
