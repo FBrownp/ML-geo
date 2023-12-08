@@ -1,4 +1,4 @@
-# Chicken-Disease-Classification--Project
+# ML XGboost regression for Slope reinforcement calculation
 
 
 ## Workflows
