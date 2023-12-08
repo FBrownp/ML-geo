@@ -1,0 +1,44 @@
+stages:
+
+  data_ingestion:
+    cmd: python src\XGboost_for_slopes\pipeline\stage01_data_ingestion.py
+    deps:
+      - src\XGboost_for_slopes\pipeline\stage01_data_ingestion.py
+      - config\config.yaml
+    outs: 
+      - artifacts\data_ingestion\main_data.csv
+  
+  data_validation:
+    cmd: python src\XGboost_for_slopes\pipeline\stage02_data_validation.py
+    deps:
+    - src\XGboost_for_slopes\pipeline\stage02_data_validation.py
+    - config\config.yaml
+    - schema.yaml
+
+  
+  data_transformation:
+    cmd: python src\XGboost_for_slopes\pipeline\stage03_data_transformation.py
+    deps:
+    - src\XGboost_for_slopes\pipeline\stage03_data_transformation.py
+    - config\config.yaml
+    - artifacts/data_validation/status.txt
+    - artifacts/data_validation/status_dtype.txt
+
+
+  model_trainer:
+    cmd: python src\XGboost_for_slopes\pipeline\stage04_model_trainer.py
+    deps:
+    - src\XGboost_for_slopes\pipeline\stage04_model_trainer.py
+    - config\config.yaml
+    - params.yaml
+    - artifacts\data_transformation\train.csv
+    - artifacts\data_transformation\transformation.pkl
+
+  
+  model_evaluation:
+    cmd: python src\XGboost_for_slopes\pipeline\stage05_model_evaluation.py
+    deps:
+    - src\XGboost_for_slopes\pipeline\stage05_model_evaluation.py
+    - config\config.yaml
+    - artifacts\data_transformation\test.csv
+    - artifacts\data_transformation\transformation.pkl

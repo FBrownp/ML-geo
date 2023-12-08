@@ -1,4 +1,4 @@
 Xgboost: 
-  REG_ALPHA: 0.02
-  REG_LAMBDA: 0.06
+  REG_ALPHA: 0.01
+  REG_LAMBDA: 0.03
 
