@@ -22,7 +22,7 @@ Clone the repository
 ```bash
 https://github.com/FBrownp/ML-geo
 ```
-### STEP 01- Create a conda environment after opening the repository
+### STEP 01- Create a new python venv environment after opening the repository
 
 ```bash
 python -m venv venv
