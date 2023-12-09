@@ -28,6 +28,8 @@ jobs:
     name: Run DVC pipeline
     runs-on: windows-latest
     steps:
+      - name: Pull data from DVC
+        run: dvc pull
       - name: Run the pipeline
         run: dvc repro
       - name: Commit changes in dvc.lock
