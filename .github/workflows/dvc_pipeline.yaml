@@ -29,13 +29,12 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      
-      - name: Install DVC
-        run: pip install dvc
-        
       - name: Pull data from DVC
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+        uses: iterative/setup-dvc@v1
+
         run: 
           dvc remote modify origin --local auth basic 
           dvc remote modify origin --local user ${{ secrets.DAGSHUBUSERNAME }}
