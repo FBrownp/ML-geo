@@ -31,7 +31,7 @@ jobs:
       - name: Run the pipeline
         run: dvc repro
       - name: Commit changes in dvc.lock
-        uses: Fbrownp/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Commit changes in dvc.lock
           branch: main
