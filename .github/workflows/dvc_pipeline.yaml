@@ -29,4 +29,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Run the code 
-        uses: ML-GEO/dvc.yaml
+        uses: FBrownp/ML-geo@dvc.yaml
