@@ -33,11 +33,11 @@ jobs:
       
       - name: Install DVC.
         shell: bash
-        run: pip install -r requirements.txt
+        run: pip install dvc
 
       - name: Add remote DVC
         shell: bash
-        run: dvc remote -d origin https://dagshub.com/FBrownp/ML-geo.dvc
+        run: dvc add remote -d origin https://dagshub.com/FBrownp/ML-geo.dvc
 
       - name: Pull data from DVC
         shell: bash
