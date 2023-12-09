@@ -29,7 +29,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      -name: install dv
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Install DVC
         run: pip install dvc
       - name: Pull data from DVC
         run: 
