@@ -33,28 +33,4 @@ jobs:
       
       - name: Install DVC.
         shell: bash
-        run: pip install dvc
-
-      - name: Add remote DVC
-        shell: bash
-        run: dvc add remote -o https://dagshub.com/FBrownp/ML-geo.dvc
-
-      - name: Pull data from DVC
-        shell: bash
-        run: 
-          dvc pull --run-cache
-
-      - name: Run the pipeline
-        shell: bash
-        run: dvc repro
-
-      - name: Push the outcome to DVC remote storage
-        shell: bash
-        run: dvc push
-
-      - name: Commit changes in dvc.lock
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Commit changes in dvc.lock
-          branch: main
-          file_pattern: dvc.lock
+        run: dvc.yaml
