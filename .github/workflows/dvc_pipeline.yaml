@@ -28,8 +28,8 @@ jobs:
     name: deploy to docker image
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@main
-      - name: build and push to docker
+    - uses: actions/checkout@main
+    - name: build and push to docker
       uses: docker/build-push-action@v1
       with:
         username: ${{secrets.DOCKER_USERNAME}}
