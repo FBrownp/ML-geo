@@ -37,8 +37,6 @@ jobs:
       - name: Pull data from DVC
         run: 
           dvc remote modify origin --local auth basic 
-          dvc remote modify origin --local user ${{ secrets.DAGSHUBUSERNAME }}
-          dvc remote modify origin --local password ${{ secrets.DAGSHUBKEY }}
           dvc pull
 
       - name: Run the pipeline
