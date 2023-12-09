@@ -25,6 +25,9 @@ jobs:
         run: echo "Running unit tests"
 
   Verification: 
-    - name: Run the code
-      uses: ML-GEO
-      run: python dvc.yaml
+    name: Run yaml
+    runs-on: windows-latest
+    steps:
+      - name: Run the code 
+        uses: ML-GEO
+        run: python dvc.yaml
