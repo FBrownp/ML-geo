@@ -27,7 +27,10 @@ jobs:
   Verification:
     name: Run DVC pipeline
     runs-on: windows-latest
+    container: FBrownp/ML-geo:dvc
     steps:
+      - name: Checkout
+        run: actions/checkout@v3
       - name: Pull data from DVC
         run: 
           dvc remote modify origin --local auth basic 
