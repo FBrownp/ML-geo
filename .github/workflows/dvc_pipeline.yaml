@@ -26,11 +26,14 @@ jobs:
 
   Verification:
     name: Run DVC pipeline
-    runs-on: ubuntu-latest
-    container: FBrownp/ML-geo:dvc
+    runs-on: windows-latest
+
     steps:
       - name: Checkout
         run: actions/checkout@v3
+      
+      - name: Install DVC
+        run: pip install dvc
       - name: Pull data from DVC
         run: 
           dvc remote modify origin --local auth basic 
