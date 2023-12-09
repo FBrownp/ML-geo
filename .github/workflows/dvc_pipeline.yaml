@@ -29,6 +29,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      -name: install dvc
+        run: pip install dvc
       - name: Pull data from DVC
         run: 
           dvc remote modify origin --local auth basic 
