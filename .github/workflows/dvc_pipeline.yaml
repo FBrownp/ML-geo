@@ -26,7 +26,7 @@ jobs:
 
   Deploy:
     name: deploy to docker image
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
     - name: build and push to docker
