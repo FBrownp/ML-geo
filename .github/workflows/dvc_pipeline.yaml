@@ -29,5 +29,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Run the code 
-        uses: ML-GEO
-        run: python dvc.yaml
+        uses: ML-GEO/dvc.yaml
