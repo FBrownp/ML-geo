@@ -1,2 +1,6 @@
+[core]
+    remote = ocelot
+['remote "ocelot"']
+    url = https://dagshub.com/FBrownp/ML-geo.dvc
 ['remote "origin"']
     url = https://dagshub.com/FBrownp/ML-geo.dvc
