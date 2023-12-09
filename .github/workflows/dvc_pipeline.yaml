@@ -33,4 +33,4 @@ jobs:
       
       - name: Install DVC.
         shell: bash
-        run: dvc.yaml
+        run: python dvc.yaml
