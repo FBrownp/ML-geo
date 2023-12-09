@@ -7,19 +7,20 @@ stages:
       hash: md5
       md5: 616b9aeabe4a975a7155296e7cb5ce4f
       size: 1270
-    - path: src\XGboost_for_slopes\exception\exception.py
+    - path: src/XGboost_for_slopes/components/data_ingestion.py
       hash: md5
-      md5: 87d8b339b31e65186f384829f24f3766
-      size: 644
+      md5: 26e7c36f866ec47bd79f5af62ad8aac5
+      size: 807
     - path: src\XGboost_for_slopes\pipeline\stage01_data_ingestion.py
       hash: md5
       md5: 02b3b6713c73dafd06faadbe47e196f4
       size: 978
     outs:
-    - path: artifacts\data_ingestion\main_data.csv
+    - path: artifacts\data_ingestion\
       hash: md5
-      md5: a638beaeb2256b4f02fe3c64ceddea16
+      md5: 223b817f2a0ff328e4ddce1408270347.dir
       size: 3586275
+      nfiles: 1
   data_validation:
     cmd: python src\XGboost_for_slopes\pipeline\stage02_data_validation.py
     deps:
@@ -31,23 +32,20 @@ stages:
       hash: md5
       md5: 6f4d4c12a34466a6d376f884487daa4d
       size: 236
-    - path: src\XGboost_for_slopes\exception\exception.py
+    - path: src\XGboost_for_slopes\components\data_validation.py
       hash: md5
-      md5: 87d8b339b31e65186f384829f24f3766
-      size: 644
+      md5: 7b91ddcecba3784bcdbf52b9d2e5741f
+      size: 2268
     - path: src\XGboost_for_slopes\pipeline\stage02_data_validation.py
       hash: md5
       md5: 93693bbc7346f62bd48f18530a00e9d5
       size: 1049
     outs:
-    - path: artifacts\data_validation\status.txt
+    - path: artifacts\data_validation\
       hash: md5
-      md5: 86e6a2f694c57a675b3e2da6b95ff9ba
-      size: 23
-    - path: artifacts\data_validation\status_dtype.txt
-      hash: md5
-      md5: 86e6a2f694c57a675b3e2da6b95ff9ba
-      size: 23
+      md5: 073220ab554a5b021e7faf79130d289b.dir
+      size: 46
+      nfiles: 2
   data_transformation:
     cmd: python src\XGboost_for_slopes\pipeline\stage03_data_transformation.py
     deps:
@@ -63,34 +61,27 @@ stages:
       hash: md5
       md5: 616b9aeabe4a975a7155296e7cb5ce4f
       size: 1270
-    - path: src\XGboost_for_slopes\exception\exception.py
+    - path: src\XGboost_for_slopes\components\data_transformation.py
       hash: md5
-      md5: 87d8b339b31e65186f384829f24f3766
-      size: 644
+      md5: c5a7fda42312f788c9abcf08cfb23e9e
+      size: 1952
     - path: src\XGboost_for_slopes\pipeline\stage03_data_transformation.py
       hash: md5
       md5: dc5eede8ca7626d645648cc5b94eb18b
       size: 1778
     outs:
-    - path: artifacts\data_transformation\test.csv
+    - path: artifacts\data_transformation\
       hash: md5
-      md5: 514eb608ca676f568bd9eb19b8800ddb
-      size: 997915
-    - path: artifacts\data_transformation\train.csv
-      hash: md5
-      md5: e44d193c83bd2b14437d82359dcf4843
-      size: 2327622
-    - path: artifacts\data_transformation\transformation.pkl
-      hash: md5
-      md5: 84f7879c77e5e7b13d41b745207b173d
-      size: 537
+      md5: 0cf21fb127d70c79df3b386666a67129.dir
+      size: 3326074
+      nfiles: 3
   model_trainer:
     cmd: python src\XGboost_for_slopes\pipeline\stage04_model_trainer.py
     deps:
     - path: artifacts\data_transformation\train.csv
       hash: md5
-      md5: e44d193c83bd2b14437d82359dcf4843
-      size: 2327622
+      md5: 6e1d9187932cefe06423fe84b1158514
+      size: 2327847
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
       md5: 84f7879c77e5e7b13d41b745207b173d
@@ -103,30 +94,27 @@ stages:
       hash: md5
       md5: 413b64b4429462980c5c433c9eed6de9
       size: 52
-    - path: src\XGboost_for_slopes\exception\exception.py
+    - path: src\XGboost_for_slopes\components\model_trainer.py
       hash: md5
-      md5: 87d8b339b31e65186f384829f24f3766
-      size: 644
+      md5: 55f86bbf4880dc701c500ad269f53b40
+      size: 2363
     - path: src\XGboost_for_slopes\pipeline\stage04_model_trainer.py
       hash: md5
       md5: f77ead359e836cbe5e1a1e6016dc55d1
       size: 964
     outs:
-    - path: artifacts\model_trainer\model_1.joblib
+    - path: artifacts\model_trainer\
       hash: md5
-      md5: 4a778c4e0121a98932bc3f051cb0ea33
-      size: 2993
-    - path: artifacts\model_trainer\model_2.joblib
-      hash: md5
-      md5: faaf946aa7c8a5d915ed8920e1e5ea44
-      size: 2991
+      md5: 8253bccde5afea7a5498ae75fe66cc9b.dir
+      size: 9682
+      nfiles: 2
   model_evaluation:
     cmd: python src\XGboost_for_slopes\pipeline\stage05_model_evaluation.py
     deps:
     - path: artifacts\data_transformation\test.csv
       hash: md5
-      md5: 514eb608ca676f568bd9eb19b8800ddb
-      size: 997915
+      md5: da2a8d700e2e8843a99f7a9554bec88b
+      size: 997690
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
       md5: 84f7879c77e5e7b13d41b745207b173d
@@ -135,12 +123,17 @@ stages:
       hash: md5
       md5: 616b9aeabe4a975a7155296e7cb5ce4f
       size: 1270
+    - path: src\XGboost_for_slopes\components\model_evaluation.py
+      hash: md5
+      md5: 59074740a0fd58f0b0161054bc6877fa
+      size: 3473
     - path: src\XGboost_for_slopes\pipeline\stage05_model_evaluation.py
       hash: md5
       md5: d2d42cddf8125886c131329011f23ac6
       size: 1002
     outs:
-    - path: artifacts\model_evaluation\scores.json
+    - path: artifacts\model_evaluation\
       hash: md5
-      md5: 52de8a867ca25e31e6e76431045537cd
-      size: 217
+      md5: 89d99eec75859b55a954bf2f1dfa6095.dir
+      size: 219
+      nfiles: 1

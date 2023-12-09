@@ -14,7 +14,7 @@ class DataTransformation():
         self.config = config
 
     def get_data_transformer_object(self):
-
+        
         """
         This function is responsible for data transformation
         """
