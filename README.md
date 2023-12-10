@@ -1,13 +1,7 @@
 # A complete data science and machine learning project using CI/CD Pipelines
 
 
-## This project consists of an machine learning model to predict the 
-## optimized support system for slopes by calculating the equilibrium pressure 
-## by a machine learning model for different soil parameters and geometric properties.
-## This project also have the complete CI/CD Pipeline for the machine learning model using MlFlow
-## to track the version of the model and using DVC to ingest data, transform data, train the model, evaluate and predict.
-## FastAPI is used to create a Restful API to interact with the model.
-## GitHub Workflow is used with a .yaml file to run integration and dockerization of the app.py file automatically.
+## This project consists of an EDA, and machine learning model formulation to predict the optimized support system for slopes by calculating the equilibrium pressure by a machine learning model for different soil parameters and geometric properties. This project also have the complete CI/CD Pipeline for the machine learning model using MlFlow to track the version of the model and using DVC to ingest data, transform data, train the model, evaluate and predict. FastAPI is used to create a Restful API to interact with the model. GitHub Workflow is used with a .yaml file to run integration and dockerization of the app.py file automatically.
 
 
 # How to run?
