@@ -1,17 +1,13 @@
-# ML XGboost regression for Slope reinforcement calculation
+# A complete data science and machine learning project using CI/CD Pipelines
 
 
-## Workflows
-
-1. Update config.yaml
-2. Update secrets.yaml [Optional]
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipeline 
-8. Update the main.py
-9. Update the dvc.yaml
+## This project consists of an machine learning model to predict the 
+## optimized support system for slopes by calculating the equilibrium pressure 
+## by a machine learning model for different soil parameters and geometric properties.
+## This project also have the complete CI/CD Pipeline for the machine learning model using MlFlow
+## to track the version of the model and using DVC to ingest data, transform data, train the model, evaluate and predict.
+## FastAPI is used to create a Restful API to interact with the model.
+## GitHub Workflow is used with a .yaml file to run integration and dockerization of the app.py file automatically.
 
 
 # How to run?
@@ -35,8 +31,17 @@ pip install -r requirements.txt
 ```
 
 
+### STEP 03- Init DVC and reproduce
 ```bash
-# Finally run the following command
+dvc init
+```
+```bash
+dvc repro
+```
+
+### STEP 04- run the app with the trained model
+
+```bash 
 python app.py
 ```
 
