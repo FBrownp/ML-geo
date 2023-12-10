@@ -63,8 +63,8 @@ stages:
       size: 1270
     - path: src\XGboost_for_slopes\components\data_transformation.py
       hash: md5
-      md5: c5a7fda42312f788c9abcf08cfb23e9e
-      size: 1952
+      md5: 7069715629e37b0eed25ac32df5e66b2
+      size: 1947
     - path: src\XGboost_for_slopes\pipeline\stage03_data_transformation.py
       hash: md5
       md5: dc5eede8ca7626d645648cc5b94eb18b
@@ -72,7 +72,7 @@ stages:
     outs:
     - path: artifacts\data_transformation\
       hash: md5
-      md5: 0cf21fb127d70c79df3b386666a67129.dir
+      md5: 6204802366d028110f40b76dc532cdb7.dir
       size: 3326074
       nfiles: 3
   model_trainer:
@@ -80,8 +80,8 @@ stages:
     deps:
     - path: artifacts\data_transformation\train.csv
       hash: md5
-      md5: 6e1d9187932cefe06423fe84b1158514
-      size: 2327847
+      md5: e86e11649e3d17c9d7917612e776f6b0
+      size: 2328001
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
       md5: 84f7879c77e5e7b13d41b745207b173d
@@ -105,7 +105,7 @@ stages:
     outs:
     - path: artifacts\model_trainer\
       hash: md5
-      md5: 8253bccde5afea7a5498ae75fe66cc9b.dir
+      md5: 4f435e586f422fc14ed3d7ceec3c4d30.dir
       size: 9682
       nfiles: 2
   model_evaluation:
@@ -113,8 +113,8 @@ stages:
     deps:
     - path: artifacts\data_transformation\test.csv
       hash: md5
-      md5: da2a8d700e2e8843a99f7a9554bec88b
-      size: 997690
+      md5: 4f61c7c42b2ad81f7a40b3ae54a60824
+      size: 997536
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
       md5: 84f7879c77e5e7b13d41b745207b173d
@@ -134,6 +134,6 @@ stages:
     outs:
     - path: artifacts\model_evaluation\
       hash: md5
-      md5: 89d99eec75859b55a954bf2f1dfa6095.dir
-      size: 219
+      md5: 7a3b68339695405a0fc86d54f77eb3f4.dir
+      size: 218
       nfiles: 1
