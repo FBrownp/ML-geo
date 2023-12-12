@@ -24,7 +24,7 @@ class DataTransformation():
                 steps=[
                 ("imputer", SimpleImputer(strategy="median") ),
                 ("scaler", StandardScaler()),
-                ("polynomial-scaler", PolynomialFeatures(degree=2))
+                ("polynomial-scaler", PolynomialFeatures(degree=3))
                 ])
             logger.info("Data Transformation file created")
 

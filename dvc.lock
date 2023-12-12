@@ -63,7 +63,7 @@ stages:
       size: 1270
     - path: src\XGboost_for_slopes\components\data_transformation.py
       hash: md5
-      md5: 7069715629e37b0eed25ac32df5e66b2
+      md5: ed71af877fa1e718513c76f6f035b9fe
       size: 1947
     - path: src\XGboost_for_slopes\pipeline\stage03_data_transformation.py
       hash: md5
@@ -72,7 +72,7 @@ stages:
     outs:
     - path: artifacts\data_transformation\
       hash: md5
-      md5: 6204802366d028110f40b76dc532cdb7.dir
+      md5: c9a026b856b1bef6958cb66a234ed451.dir
       size: 3326074
       nfiles: 3
   model_trainer:
@@ -80,11 +80,11 @@ stages:
     deps:
     - path: artifacts\data_transformation\train.csv
       hash: md5
-      md5: e86e11649e3d17c9d7917612e776f6b0
-      size: 2328001
+      md5: 9dad067ead04b1df912e1033dff1b70a
+      size: 2327691
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
-      md5: 84f7879c77e5e7b13d41b745207b173d
+      md5: 2d4457a46639b5f31d9ec0b7805c5da2
       size: 537
     - path: config\config.yaml
       hash: md5
@@ -92,7 +92,7 @@ stages:
       size: 1270
     - path: params.yaml
       hash: md5
-      md5: 413b64b4429462980c5c433c9eed6de9
+      md5: 69bc9ad60a77a511572ca35b5f48b6fc
       size: 52
     - path: src\XGboost_for_slopes\components\model_trainer.py
       hash: md5
@@ -105,19 +105,19 @@ stages:
     outs:
     - path: artifacts\model_trainer\
       hash: md5
-      md5: 4f435e586f422fc14ed3d7ceec3c4d30.dir
-      size: 9682
+      md5: c5850be9860bfca4af4d9d1bc5261e3b.dir
+      size: 10358
       nfiles: 2
   model_evaluation:
     cmd: python src\XGboost_for_slopes\pipeline\stage05_model_evaluation.py
     deps:
     - path: artifacts\data_transformation\test.csv
       hash: md5
-      md5: 4f61c7c42b2ad81f7a40b3ae54a60824
-      size: 997536
+      md5: 64267f51d11b54cc9a31763d07c2e475
+      size: 997846
     - path: artifacts\data_transformation\transformation.pkl
       hash: md5
-      md5: 84f7879c77e5e7b13d41b745207b173d
+      md5: 2d4457a46639b5f31d9ec0b7805c5da2
       size: 537
     - path: config\config.yaml
       hash: md5
@@ -134,6 +134,6 @@ stages:
     outs:
     - path: artifacts\model_evaluation\
       hash: md5
-      md5: 7a3b68339695405a0fc86d54f77eb3f4.dir
-      size: 218
+      md5: 4813c10b2e324760a9216458e851f9d1.dir
+      size: 217
       nfiles: 1

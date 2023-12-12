@@ -1,4 +1,4 @@
-[core]
-    remote = originv
-['remote "origin"']
-    url = https://dagshub.com/FBrownp/ML-geo.dvc
+# [core]
+#     remote = originv
+# ['remote "origin"']
+#     url = https://dagshub.com/FBrownp/ML-geo.dvc
