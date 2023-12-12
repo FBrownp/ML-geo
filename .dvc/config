@@ -1,4 +1,9 @@
-# [core]
-#     remote = originv
-# ['remote "origin"']
-#     url = https://dagshub.com/FBrownp/ML-geo.dvc
+[core]
+    remote = storage
+['remote "storage"']
+    url = https://dagshub.com/FBrownp/ML-geo.dvc
+    method = PUT
+    auth = basic
+    user = FBrownp
+    ask_password = true
+
