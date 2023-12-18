@@ -60,7 +60,7 @@ def predict(data : VariablesIn):
     new_data[6] = data[5][1]
     input_data = pd.DataFrame([new_data], columns= names)
     
-
+##
     p1,p2 = Model_prediction(input_data)
 
     p1 = np.array(p1).tolist()
