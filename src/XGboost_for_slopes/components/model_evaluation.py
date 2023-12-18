@@ -10,13 +10,15 @@ import mlflow.xgboost
 from  urllib.parse import urlparse
 from XGboost_for_slopes.entity.config_entity import ModelEvaluationConfig
 from pathlib import Path
+DASGHUB_KEY = os.environ["DAGSHUGKEY"]
+
 
 class ModelEvaluation():
     def __init__(self, config: ModelEvaluationConfig):
         self.config = config
         os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/FBrownp/ML-geo.mlflow"
         os.environ["MLFLOW_TRACKING_USERNAME"]="FBrownp"
-        os.environ["MLFLOW_TRACKING_PASSWORD"]="cceabdf6d4f5adc126b6cb03cc7cc4bf568e2591"
+        os.environ["MLFLOW_TRACKING_PASSWORD"]=DASGHUB_KEY
 
     def get_model_evaluation_object(self):
         

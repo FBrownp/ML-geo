@@ -24,6 +24,64 @@ jobs:
       - name: Run unit tests
         run: echo "Running unit tests"
 
+env:
+  DAGSHUGKEY: ${{secrets.DAGSHUBKEY}}
+
+jobs: 
+  Integration: 
+    name: Continous Integration
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Lint code
+        run: echo "Linting repository"
+
+      - name: Run unit tests
+        run: echo "Running unit tests"
+
+
+  RunCode:
+    name: Running the code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Packages
+        run: pip install -r requirements.txt
+
+      - name: Upgrade cryptography package
+        run: pip3 install --upgrade cryptography==38.0.4
+
+
+      - name: Connect to repo
+        run:
+          dvc remote default origin-s3
+      
+      - name: User
+        run:
+          dvc remote modify origin-s3 --local access_key_id ${{secrets.DAGSHUBKEY}}
+      
+      - name: Password
+        run:
+          dvc remote modify origin-s3 --local secret_access_key ${{secrets.DAGSHUBKEY}}
+
+      - name: Run DVC
+        run: dvc repro
+
+      - name: Commit changes in dvc.lock
+        uses: stefanzweifel/git-auto-commit-action@v4 
+        with:
+          commit_message: Commit changes in dvc.lock
+          branch: main
+          file-pattern: dvc.lock
+
+      - name: DCV push
+        run: dvc push -r origin-s3
+
   # Deploy:
   #   name: deploy to docker images
   #   runs-on: ubuntu-latest
