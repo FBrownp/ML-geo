@@ -6,6 +6,6 @@
     auth = basic
     user = FBrownp
     ask_password = true
-['remote "origin"']
+['remote "origin-s3"']
     url = s3://dvc
     endpointurl = https://dagshub.com/FBrownp/ML-geo.s3
