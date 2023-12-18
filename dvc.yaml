@@ -29,8 +29,8 @@ stages:
     - artifacts/data_validation/status_dtype.txt
     - src/XGboost_for_slopes/components/data_transformation.py
     outs:
-    - artifacts/data_transformation/test.py
-    - artifacts/data_transformation/train.py
+    - artifacts/data_transformation/test.csv
+    - artifacts/data_transformation/train.csv
 
   model_trainer:
     cmd: python src/XGboost_for_slopes/pipeline/stage04_model_trainer.py

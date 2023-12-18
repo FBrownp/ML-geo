@@ -160,8 +160,8 @@ cython_debug/
 #.idea/
 artifacts/data_ingestion
 artifacts/data_validation
-artifacts/data_transformation/test.py
-artifacts/data_transformation/train.py
+artifacts/data_transformation/test.csv
+artifacts/data_transformation/train.csv
 artifacts/model_evaluation
 
 #/dvc.lock
