@@ -1,5 +1,5 @@
 [core]
-    remote = storage
+    remote = origin
 ['remote "storage"']
     url = https://dagshub.com/FBrownp/ML-geo.dvc
     method = PUT
