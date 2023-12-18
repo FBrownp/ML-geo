@@ -9,20 +9,12 @@ on:
       - 'Dockerfile'
       - 'template.py'
       - 'setup.py'
+      - 'artifacts'
+      - 'research'
+      - 'app.py'
+      - 'main.py'
+      - '.gitattributes'
 
-jobs: 
-  Integration: 
-    name: Continous Integration
-    runs-on: windows-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Lint code
-        run: echo "Linting repository"
-
-      - name: Run unit tests
-        run: echo "Running unit tests"
 
 env:
   DAGSHUGKEY: ${{secrets.DAGSHUBKEY}}
