@@ -10,7 +10,7 @@ import mlflow.xgboost
 from  urllib.parse import urlparse
 from XGboost_for_slopes.entity.config_entity import ModelEvaluationConfig
 from pathlib import Path
-DASGHUB_KEY = os.environ["DAGSHUGKEY"]
+DASGHUB_KEY = "cceabdf6d4f5adc126b6cb03cc7cc4bf568e2591"
 
 
 class ModelEvaluation():
